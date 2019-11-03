@@ -20,6 +20,9 @@
       $(document).ready(function () {
         $('#responsive-menu').mobileMenu()
         $(document).tooltip()
+        $(".checkbox-input").checkboxradio()
+        $("#companysize").selectmenu()
+        $("#submit-button").button()
       })
     </script>
 </head>
@@ -61,31 +64,37 @@
 
                 Email:
                 <input type="email" name="email" maxlength="30" required="">
-
-                What VectaCorp products are you interested in?<br>
-                <label for="vProspect"><input type="checkbox" name="product" value="vProspect" id="vProspect">vProspect
-                    2.0</label>
-                <label for="vConvert"><input type="checkbox" name="product" value="vConvert" id="vConvert">vConvert 2.0</label>
-                <label for="vRetain"><input type="checkbox" name="product" value="vRetain" id="vRetain">vRetain
-                    1.0</label>
-
                 <br>
-                What is your current infrastructure?<br>
-                <label for="Mac"><input type="radio" name="infrastructure" value="Mac" id="Mac">Mac</label>
-                <label for="Linux"><input type="radio" name="infrastructure" value="Linux" id="Linux">Linux</label>
-                <label for="Unix"><input type="radio" name="infrastructure" value="Unix" id="Unix">Unix</label>
-                <label for="Windows"><input type="radio" name="infrastructure" value="Windows"
-                                            id="Windows">Windows</label>
-
+                <fieldset>
+                    <legend>What VectaCorp products are you interested in?</legend>
+                    <label for="checkbox-1">vProspect 2.0</label>
+                    <input type="checkbox" name="product" id="checkbox-1" value="vProspect" class="checkbox-input">
+                    <label for="checkbox-2">vConvert 2.0</label>
+                    <input type="checkbox" name="product" id="checkbox-2" value="vConvert" class="checkbox-input">
+                    <label for="checkbox-3">vRetain 1.0</label>
+                    <input type="checkbox" name="product" id="checkbox-3" value="vRetain" class="checkbox-input">
+                </fieldset>
+                <fieldset>
+                    <legend>What is your current infrastructure?</legend>
+                    <label for="radio-1">Mac</label>
+                    <input type="radio" name="infrastructure" id="radio-1" value="Mac" class="checkbox-input">
+                    <label for="radio-2">Linux</label>
+                    <input type="radio" name="infrastructure" id="radio-2" value="Linux" class="checkbox-input">
+                    <label for="radio-3">Unix</label>
+                    <input type="radio" name="infrastructure" id="radio-3" value="Unix" class="checkbox-input">
+                    <label for="radio-4">Windows</label>
+                    <input type="radio" name="infrastructure" id="radio-4" value="Windows" class="checkbox-input">
+                </fieldset>
                 <br>
-                How many employees do you have?
-                <select name="companysize">
+                <label for="companysize">How many employees do you have?</label>
+                <select name="companysize" id="companysize">
                     <option value="1-10">1-10</option>
                     <option value="11-100">11-100</option>
                     <option value="101-1000">101-1000</option>
                     <option value="More than 1000">More than 1000</option>
                 </select>
-
+                <br>
+                <br>
                 How did you hear about us?
                 <select name="hearaboutus" multiple="" size="5">
                     <option value="Magazine Ad">Magazine Ad</option>
@@ -97,7 +106,7 @@
 
                 Questions or comments for our sales representatives?
                 <textarea name="questions" size="30" rows="5"></textarea>
-                <input type="submit" name="submit" value="Submit Now">
+                <button id="submit-button" type="submit" name="submit">Submit Now</button>
             </fieldset>
         </form>
     </section>
